@@ -1,5 +1,5 @@
 import express from "express";
-import CTRL from "../C/home.ctrl.js";
+import CTRL from "../home.ctrl.js";
 
 const router = express.Router();
 
