@@ -1,8 +1,16 @@
-function home(req, res) {
-  res.render("home");
-}
-function login(req, res) {
-  res.render("login");
-}
+const get = {
+  home: (req, res) => {
+    res.render("home");
+  },
+  login: (req, res) => {
+    res.render("login");
+  },
+};
 
-export default { home, login };
+const post = {
+  login: (req, res) => {
+    console.log(req.body);
+  },
+};
+
+export default { get, post };

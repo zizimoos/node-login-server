@@ -8,7 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/bin/www.js"
+    "start": "nodemon ./bin/www.js"
   },
   "keywords": [],
   "author": "",
