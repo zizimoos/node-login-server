@@ -3,8 +3,8 @@ import CTRL from "../home.ctrl.js";
 
 const router = express.Router();
 
-router.get("/", CTRL.get.home);
-router.get("/login", CTRL.get.login);
-router.post("/login", CTRL.post.login);
+router.get("/", CTRL.render.home);
+router.get("/login", CTRL.render.login);
+router.post("/login", CTRL.process.login);
 
 export default router;
