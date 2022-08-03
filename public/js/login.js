@@ -22,5 +22,8 @@ loginBtn.addEventListener("click", () => {
       } else {
         alert(res.msg);
       }
+    })
+    .catch((err) => {
+      console.error(new Error("login error"));
     });
 });
