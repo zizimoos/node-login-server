@@ -1,4 +1,4 @@
-import users from "../M/data.js";
+import { UserStorage } from "../M/memory/data.js";
 
 const render = {
   home: (req, res) => {
@@ -12,16 +12,18 @@ const render = {
 const process = {
   login: (req, res) => {
     const { id, pw } = req.body;
+    const users = UserStorage.getUsers("id", "pw");
     if (users.id.includes(id)) {
       const idx = users.id.indexOf(id);
       if (users.pw[idx] === pw) {
         return res.json({
           success: true,
+          message: "Login Success",
         });
       }
       return res.json({
         success: false,
-        msg: "password is wrong",
+        message: "password is wrong",
       });
     }
   },

@@ -17,10 +17,10 @@ loginBtn.addEventListener("click", () => {
     .then((res) => res.json())
     .then((res) => {
       if (res.success) {
-        alert("login success");
+        alert(res.message);
         window.location.href = "/";
       } else {
-        alert(res.msg);
+        alert(res.message);
       }
     })
     .catch((err) => {
