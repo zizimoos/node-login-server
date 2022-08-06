@@ -8,26 +8,28 @@ const registerBtn = document.getElementById("registerBtn");
 registerBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log(id.value, userName.value, pw.value, confirmPw.value, email.value);
-  //   fetch("/login", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({
-  //       id: id.value,
-  //       pw: pw.value,
-  //     }),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       if (res.success) {
-  //         alert(res.message);
-  //         window.location.href = "/";
-  //       } else {
-  //         alert(res.message);
-  //       }
-  //     })
-  //     .catch((err) => {
-  //       console.error(new Error("login error"));
-  //     });
+  fetch("/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      id: id.value,
+      pw: pw.value,
+      name: userName.value,
+      email: email.value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.success) {
+        alert(res.message);
+        window.location.href = "/login";
+      } else {
+        alert(res.message);
+      }
+    })
+    .catch((err) => {
+      console.error(new Error("register error"));
+    });
 });

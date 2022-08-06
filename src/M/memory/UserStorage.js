@@ -3,6 +3,7 @@ export class UserStorage {
     id: ["henry", "tomson", "james"],
     pw: ["1111", "2222", "3333"],
     name: ["henry", "tomson", "james"],
+    email: ["henry@henry.com", "tomson@tomsom.com", "james@james.com"],
   };
   static getUsers(...args) {
     const users = this.#users;

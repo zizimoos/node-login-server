@@ -39,6 +39,28 @@ class User {
       message: "id is wrong",
     };
   }
+  register() {
+    const { id, pw, name, email } = UserStorage.getUsers(
+      "id",
+      "pw",
+      "name",
+      "email"
+    );
+    if (id.includes(this.body.id)) {
+      return {
+        success: false,
+        message: "id is already exist",
+      };
+    }
+    id.push(this.body.id);
+    pw.push(this.body.pw);
+    name.push(this.body.name);
+    email.push(this.body.email);
+    return {
+      success: true,
+      message: "Register Success",
+    };
+  }
 }
 
 export default User;
