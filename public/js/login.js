@@ -2,7 +2,8 @@ const id = document.getElementById("id");
 const pw = document.getElementById("password");
 const loginBtn = document.getElementById("loginBtn");
 
-loginBtn.addEventListener("click", () => {
+loginBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   fetch("/login", {
     method: "POST",
     headers: {
