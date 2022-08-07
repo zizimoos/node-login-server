@@ -52,6 +52,7 @@ class User {
         message: "id is already exist",
       };
     }
+
     const response = UserStorage.save(this.body);
     if (response.success) {
       return {
