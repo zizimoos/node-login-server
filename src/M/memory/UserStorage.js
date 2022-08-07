@@ -27,4 +27,14 @@ export class UserStorage {
     //   name: users.name[idx],
     // };
   }
+  static save(body) {
+    const users = this.#users;
+    users.id.push(body.id);
+    users.pw.push(body.pw);
+    users.name.push(body.name);
+    users.email.push(body.email);
+    return {
+      success: true,
+    };
+  }
 }

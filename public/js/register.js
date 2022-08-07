@@ -8,6 +8,21 @@ const registerBtn = document.getElementById("registerBtn");
 registerBtn.addEventListener("click", (e) => {
   e.preventDefault();
   console.log(id.value, userName.value, pw.value, confirmPw.value, email.value);
+  if (
+    !id.value ||
+    !userName.value ||
+    !pw.value ||
+    !confirmPw.value ||
+    !email.value
+  ) {
+    alert("Please fill all the fields");
+    return;
+  }
+  if (pw.value !== confirmPw.value) {
+    alert("Password does not match");
+    return;
+  }
+
   fetch("/register", {
     method: "POST",
     headers: {

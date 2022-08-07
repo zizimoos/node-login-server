@@ -52,14 +52,13 @@ class User {
         message: "id is already exist",
       };
     }
-    id.push(this.body.id);
-    pw.push(this.body.pw);
-    name.push(this.body.name);
-    email.push(this.body.email);
-    return {
-      success: true,
-      message: "Register Success",
-    };
+    const response = UserStorage.save(this.body);
+    if (response.success) {
+      return {
+        success: true,
+        message: "Register Success",
+      };
+    }
   }
 }
 
