@@ -39,21 +39,15 @@ class User {
       message: "id is wrong",
     };
   }
-  register() {
-    const { id, pw, name, email } = UserStorage.getUsers(
-      "id",
-      "pw",
-      "name",
-      "email"
-    );
+  async register() {
+    const { id } = await UserStorage.getUsers("id");
     if (id.includes(this.body.id)) {
       return {
         success: false,
         message: "id is already exist",
       };
     }
-
-    const response = UserStorage.save(this.body);
+    const response = await UserStorage.save(this.body);
     if (response.success) {
       return {
         success: true,
