@@ -1,4 +1,4 @@
-import User from "../M/fileSystem/Users.js";
+import User from "../M/mysql/Users.js";
 
 const render = {
   home: (req, res) => {

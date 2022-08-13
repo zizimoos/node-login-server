@@ -32,7 +32,6 @@ export class UserStorage {
     }, {});
     return userInfo;
   }
-
   static async save(body) {
     const usersData = await fs
       .readFile("./src/M/fileSystem/Users.json", "utf-8")
