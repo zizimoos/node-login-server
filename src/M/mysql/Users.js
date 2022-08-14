@@ -40,13 +40,13 @@ class User {
     };
   }
   async register() {
-    const { id } = await UserStorage.getUsers("id");
-    if (id.includes(this.body.id)) {
-      return {
-        success: false,
-        message: "id is already exist",
-      };
-    }
+    // const { id } = await UserStorage.getUsers("id");
+    // if (id.includes(this.body.id)) {
+    //   return {
+    //     success: false,
+    //     message: "id is already exist",
+    //   };
+    // }
     const response = await UserStorage.save(this.body);
     if (response.success) {
       return {

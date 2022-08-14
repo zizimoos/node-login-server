@@ -16,5 +16,20 @@ export class UserStorage {
     });
   }
 
-  static async save(body) {}
+  static async save(body) {
+    const sql = `INSERT INTO users(id, name, password, email) VALUES(?,?,?,?)`;
+    return new Promise((resolve, reject) => {
+      db.query(
+        sql,
+        [body.id, body.name, body.pw, body.email],
+        (err, results) => {
+          if (err) {
+            reject(`${err}`);
+          } else {
+            resolve({ success: true, message: "Register Success" });
+          }
+        }
+      );
+    });
+  }
 }
